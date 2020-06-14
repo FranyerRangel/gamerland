@@ -6,19 +6,25 @@
 
 body {
 	margin: 0;
+	font-size: 1em;
 }
 
 h1, h2, h3, h4, h5 {
 	margin: 0;
 }
 
+.container{
+	max-width: 1300px;
+	width: 100%;
+	margin: 0 auto;
+}
+
 .content-header-top {
+	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-	width: 80vw;
-	margin: auto;
 }
 
 header h2 {
@@ -67,26 +73,42 @@ h2 {
 	background-color: rgba(0, 0, 0, .8);
 }
 
-.event-content h3, .art h3, .formulario h3, h3 {
+.event-block{
+	width: 100%;
+}
+
+.event-block h3, .art h3, .formulario h3, h3 {
 	text-align: center;
 	padding: 1.5em 0;
 	border-bottom: 1px solid #0AA7E9;
-	width: 40%;
 	margin: auto;
 	font-size: 2em;
 }
 
+.event-content{
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+}
+
 .target-main {
-	width: 80vw;
+	width: 100%;
 	display: flex;
 	justify-content: space-between;
-	margin: auto;
 }
 
 .target {
-	width: 25%;
 	text-align: center;
 	margin: 5em 0;
+	width: 30%;
+}
+
+.target p{
+	text-align: justify;
+}
+
+.target:last-child{
+	margin-right: 0;
 }
 
 .btn-event {
@@ -106,39 +128,38 @@ h2 {
 }
 
 .parallax {
-	height: 80vh;
+	height: 60vh;
+	width: 100%;
 	background-image: url(../images/parallax.jpg);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-position: 20% 30%;
-	background-size: cover;
+	background-position: 20px 30px;
+	background-size: cover;	
 }
 
 .parallax p {
-	margin: 0;
-	width: 100%;
-	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
 	font-size: 3em;
 	background-color: rgba(0, 0, 0, .8);
 }
 
 .article-block {
-	width: 80vw;
-	margin: auto;
+	width: 100%;
 	padding-top: 1.5em;
 }
 
 .art {
-	margin-top: 1.0em;
+	margin-top: 2.0em;
 }
 
 .formulario {
+	width: 100%;
 	padding: 1.5em 0;
-	width: 80vw;
-	margin: auto;
 }
 
 form {
@@ -156,21 +177,25 @@ input, textarea {
 }
 
 footer {
-	background-color: #0AA7E9
-
+	width: 100%;
+	max-height: 70px;
+	background-color: #0AA7E9;
+	display: flex;
+	justify-content: center;
 }
 
 footer p {
 	color: #161616;
 	padding: 1.3em;
-	text-align: center;
-}
-
-footer p {
-	margin: 0;
 }
 
 /* RESPONSIVE*/
+
+@media screen and (max-width: 1300px){
+	.container{
+		padding: 0 1.2em;
+	}
+}
 
 @media screen and (max-width: 780px) {
 	h2, h3, p, .art h3{
@@ -178,7 +203,13 @@ footer p {
 		
 	}
 	.content-header-top {
+		margin-top: 20px;
 		flex-direction: column;
+	}
+
+	ul{
+		padding: 0;
+		justify-content: center;
 	}
 
 	.event-content {
@@ -193,5 +224,25 @@ footer p {
 	.target-main {
 		display: flex;
 		flex-direction: column;
+	}
+
+	.art h4{
+		text-align: center;
+	}
+
+	.art p{
+		text-align: justify;
+	}
+}
+
+@media screen and (max-width: 480px){
+	.parallax p{
+		font-size: 2.5em;
+	}
+}
+
+@media screen and (max-width: 480px){
+	.parallax p{
+		font-size: 2.5em;
 	}
 }
